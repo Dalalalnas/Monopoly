@@ -196,8 +196,9 @@ public class GameMaster {
 	public void movePlayer(Player player, int diceValue) {
 		Cell currentPosition = player.getPosition();
 		int positionIndex = gameBoard.queryCellIndex(currentPosition.getName());
-		int newIndex = (positionIndex+diceValue)%gameBoard.getCellNumber();
-		if(newIndex <= positionIndex || diceValue > gameBoard.getCellNumber()) {
+		int cellNumber2 = gameBoard.getCellNumber();
+		int newIndex = (positionIndex+diceValue)%cellNumber2;
+		if(newIndex <= positionIndex || diceValue > cellNumber2) {
 			player.setMoney(player.getMoney() + 200);
 		}
 		player.setPosition(gameBoard.getCell(newIndex));
