@@ -25,7 +25,7 @@ public abstract class Cell implements IOwnable {
 	 * @see edu.ncsu.monopoly.IOwnable#playAction()
 	 */
 	@Override
-	public abstract void playAction();
+	public abstract Boolean playAction(String msg);
 
 	void setName(String name) {
 		this.name = name;
